@@ -1,0 +1,169 @@
+/* Login.css */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap');
+
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif; /* Set the font family to Montserrat */
+    
+  }
+  
+
+  /* Full-screen login page */
+  .login-page {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+  
+  .weather-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('./weather.gif') no-repeat center center/cover;
+    filter: brightness(0.6);
+    z-index: -1;
+    animation: fadeIn 3s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  /* Login Box */
+  .login-box {
+    width: 400px;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 10px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    animation: slideUp 1s ease-out;
+  }
+  
+  @keyframes slideUp {
+    from {
+      transform: translateY(100px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  /* Login Title */
+  .login-title {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+  }
+  
+  /* Input Fields */
+  .input-group {
+    margin-bottom: 20px;
+  }
+  
+  .input-group label {
+    display: block;
+    margin-right: 10px;
+    margin-bottom: 5px;
+    font-weight: 500;
+  }
+  
+  .input-group input {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+  }
+  
+  .input-group input:focus {
+    border-color: #5B86E5;
+    box-shadow: 0 0 8px rgba(91, 134, 229, 0.3);
+  }
+  
+  /* Button Styles */
+  .login-button {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(to right, #36D1DC, #5B86E5);
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .login-button:hover {
+    background: linear-gradient(to right, #5B86E5, #36D1DC);
+  }
+  
+  /* Link Styles */
+  .signup-link {
+    color: #5B86E5;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .signup-link:hover {
+    color: #36D1DC;
+  }
+  /* Add this to your Login.css */
+/* Add this to your Login.css */
+.google-button {
+  background-color: #ffffff; /* White background for Google button */
+  border: 1px solid #dcdcdc; /* Light gray border */
+  color: black; /* Set the text color to black for visibility */
+  padding: 14px 30px; /* Padding for button */
+  border-radius: 8px; /* Rounded corners */
+  font-size: 16px; /* Font size */
+  display: flex; /* Flexbox for alignment */
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+  cursor: pointer; /* Pointer cursor */
+  transition: background-color 0.3s, box-shadow 0.3s; /* Transition for hover effects */
+  width: 100%; /* Full width */
+  margin-top: 10px; /* Margin for spacing */
+}
+
+.google-button:hover {
+  background-color: #f8f9fa; /* Light gray on hover */
+  border-color: #4285F4; /* Change border to blue on hover */
+}
+
+.google-icon {
+  width: 20px; /* Adjust icon size */
+  height: 20px; /* Adjust icon size */
+  margin-right: 10px; /* Space between icon and text */
+}
+
+  /* Media Query for Mobile View */
+  @media screen and (max-width: 768px) {
+    .login-box {
+      width: 90%;
+      padding: 30px;
+    }
+  
+    .weather-background {
+      background-size: cover;
+    }
+  }
+  

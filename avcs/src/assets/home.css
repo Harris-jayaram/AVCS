@@ -1,0 +1,152 @@
+
+/* Page Body */
+
+.page-body {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  transition: background-color 0.3s ease;
+}
+
+/* Sidebar Styles */
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100vh;
+  background-color: #6200ea;
+  color: #fff;
+  padding-top: 20px;
+  transition: width 0.3s ease, transform 0.3s ease;
+  z-index: 1000;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.sidebar.collapsed {
+  width: 70px;
+}
+
+.toggle-btn {
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  padding: 10px;
+  text-align: left;
+  font-size: 20px;
+  width: 100%;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.toggle-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar li {
+  margin: 15px 0;
+}
+
+.sidebar li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  transition: background 0.3s ease, padding-left 0.3s ease;
+  border-radius: 4px;
+}
+
+.sidebar li a:hover {
+  background: rgba(255, 255, 255, 0.2);
+  padding-left: 25px;
+}
+
+/* Icons */
+
+.sidebar li a svg {
+  margin-right: 10px;
+  transition: transform 0.3s ease;
+}
+
+.sidebar li a:hover svg {
+  transform: scale(1.2);
+}
+
+/* Collapsed Sidebar Icon */
+
+.sidebar.collapsed li a svg {
+  margin-right: 0;
+}
+
+.sidebar.collapsed li a span {
+  display: none;
+}
+
+/* Main Content */
+
+.main-content {
+  margin-left: 250px;
+  padding: 20px;
+  flex-grow: 1;
+  height: 100vh;
+  transition: margin-left 0.3s ease;
+}
+
+.sidebar.collapsed ~ .main-content {
+  margin-left: 70px;
+}
+
+/* Animations */
+
+.sidebar {
+  animation: slideIn 0.5s ease-in-out;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.toggle-btn:hover {
+  animation: pulse 0.5s linear;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Media Queries */
+
+@media (max-width: 68px) {
+  .sidebar {
+    transform: translateX(-100%);
+  }
+  .sidebar.expanded {
+    transform: translateX(0);
+  }
+  .main-content {
+    margin-left: 0;
+  }
+}
+
